@@ -14,14 +14,21 @@ public class Main {
     {
         Irepository<Employee> emprepo = new EmployeeRepo();
 
-        Employee emp = new Employee("1234", "qasim", "Lahore");
-        Employee emp1 = new Employee("12345", "Ali", "Karachi");
-        Employee emp2 = new Employee("123456", "mahnoor", "Lahore");
 
-        // ADDING DATA
-        emprepo.create(emp);
-        emprepo.create(emp1);
-        emprepo.create(emp2);
+            Employee emp = new Employee("1234", "qasim", "Lahore");
+            Employee emp1 = new Employee("12345", "Ali", "Karachi");
+            Employee emp2 = new Employee("123456", "mahnoor", "Lahore");
+
+        try {
+            // ADDING DATA
+            emprepo.create(emp);
+            emprepo.create(emp1);
+            emprepo.create(emp2);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Something wrong happened");;
+        }
 
 
         // DISPLAYING DATA
@@ -30,12 +37,23 @@ public class Main {
             System.out.println(e.getName() + " " + e.getEmp_number());
         }
 
-        //UPDATING DATA
-        emprepo.update(1, new Employee("E22", "faheem", "karachi"));
+        try {
+            //UPDATING DATA
+            emprepo.update(5, new Employee("E22", "faheem", "karachi"));
+        }
+        catch (Exception e)
+        {
+            System.out.println("HmmMmm ?? Something wrong happened");
+        }
 
 
-        // DELETING DATA
-      emprepo.delete(2);
+        try {
+            // DELETING DATA
+            emprepo.delete(5);
+        } catch (IndexOutOfBoundsException e)
+        {
+            System.out.println("hMMm? The record is not found in the list");
+        }
 
 
         // Department repo
