@@ -26,6 +26,7 @@ public class formatting {
         }
 
         //I removed try catch block
+        //added a new feature
 
     }
 
