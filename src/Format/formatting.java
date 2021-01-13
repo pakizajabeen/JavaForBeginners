@@ -15,7 +15,6 @@ public class formatting {
 
             String china = NumberFormat.getCurrencyInstance(Locale.CHINA).format(payment);
             String us = NumberFormat.getCurrencyInstance(Locale.US).format(payment);
-
             String india = NumberFormat.getCurrencyInstance(new Locale("en", "in")).format(payment);
 
 
@@ -25,6 +24,8 @@ public class formatting {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //I removed try catch block
 
     }
 
