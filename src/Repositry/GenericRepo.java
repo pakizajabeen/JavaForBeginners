@@ -14,27 +14,31 @@ public class GenericRepo <T> implements Irepository <T> {
     }
 
     @Override
-    public boolean create(T entity) {
+    public boolean create(T entity) throws NullPointerException
+    {
             repo.add(entity);
         return true;
     }
 
         @Override
-    public boolean update(int index, T entity) {
+    public boolean update(int index, T entity) throws IndexOutOfBoundsException
+        {
         repo.set(index, entity);
         return true;
 
     }
 
     @Override
-    public ArrayList <T> read() {
+    public ArrayList <T> read()
+    {
 
       return repo;
 
     }
 
     @Override
-    public boolean delete(int index) {
+    public boolean delete(int index) throws IndexOutOfBoundsException
+    {
       repo.remove(index);
         return true;
     }
